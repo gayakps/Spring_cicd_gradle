@@ -12,7 +12,7 @@ public class TestController {
 
     @GetMapping("/")
     public static String test(Model model) {
-        return "Testing won 22 06 07 6:010 Case 1";
+        return "Testing won 22 06 07 6:11 Case 1";
     }
 
 }
