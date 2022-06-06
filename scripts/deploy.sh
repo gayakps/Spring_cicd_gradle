@@ -25,4 +25,4 @@ fi
 DEPLOY_JAR=$DEPLOY_PATH$JAR_NAME
 echo "> DEPLOY_JAR 배포"    >> /home/ec2-user/deploy.log
 echo "서비스를 실행합니다"
-nohup java -jar $DEPLOY_JAR >> /home/ec2-user/deploy.log 2>/home/ec2-user/deploy_err.log &
+nohup sudo java -jar $DEPLOY_JAR \& >> /home/ec2-user/deploy.log 2>/home/ec2-user/deploy_err.log &
