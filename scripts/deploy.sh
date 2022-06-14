@@ -1,12 +1,6 @@
 #!/bin/bash
-echo "> 배포이후 시스템을 시작합니다" >> /home/ec2-user/deploy.log
+echo "> 22.06.14 15:20 배포이후 시스템을 시작합니다" >> /home/ec2-user/deploy.log
 BUILD_JAR=$(ls /home/ec2-user/build/libs/gradle-22.06.14.jar)     # jar가 위치하는 곳
-JAR_NAME=$(basename $BUILD_JAR)
-
-echo "> 시스템을 시작합니다 build 파일명: $JAR_NAME" >> /home/ec2-user/deploy.log
-echo "> build 파일 복사" >> /home/ec2-user/deploy.log
-DEPLOY_PATH=/home/ec2-user/deploy/
-cp $BUILD_JAR $DEPLOY_PATH
 
 CURRENT_PID=$(pgrep java)
 echo "> 현재 실행중인 애플리케이션 pid = $CURRENT_PID" >> /home/ec2-user/deploy.log
@@ -21,8 +15,5 @@ else
   sleep 10
 fi
 
-
-DEPLOY_JAR=$DEPLOY_PATH$JAR_NAME
-echo "> DEPLOY_JAR 배포"    >> /home/ec2-user/deploy.log
 echo "서비스를 실행합니다" >> /home/ec2-user/deploy.log
-nohup sudo java -jar $DEPLOY_JAR \& >> /home/ec2-user/deploy.log 2>/home/ec2-user/deploy_err.log &
+echo nohup sudo java -jar $BUILD_JAR \& >> /home/ec2-user/deploy.log 2>/home/ec2-user/deploy_err.log &
