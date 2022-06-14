@@ -15,14 +15,15 @@ public class TestController {
 
     @GetMapping("/")
     public static String test(Model model) {
-        InetAddress ip = null;
+        String defaultTime = "Testing 22 06 14 13:33 Case 1";
+        InetAddress ip;
         try {
             ip = InetAddress.getLocalHost();
-            return String.format("Testing won 22 06 14 12:54 Case 1 IP : %s HostName : %s", ip.getHostAddress(), ip.getHostName());
+            return String.format("%s IP : %s HostName : %s",defaultTime , ip.getHostAddress(), ip.getHostName());
         } catch (UnknownHostException e) {
             e.printStackTrace();
+            return defaultTime;
         }
-        return "IP 추출에 문제 발생 Testing won 22 06 14 12:54 Case 1";
     }
 
 }
