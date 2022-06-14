@@ -12,9 +12,11 @@ else
   echo "> 현재 구동중인 어플이 존재하므로 종료합니다" >> $LOG_PATH
   echo "> kill -15 $CURRENT_PID" >> $LOG_PATH
   kill -15 $CURRENT_PID
-  sleep 10
+  sleep 5
 fi
 
+AFTER_PID=$(pgrep java)
+echo "현재 남은 PID : $AFTER_PID" >> $LOG_PATH
 echo "자바 서비스를 실행합니다 !!" >> $LOG_PATH
 cat $LOG_PATH;
-java -jar /home/ec2-user/build/libs/gradle-22.06.14.jar &
+nohup java -jar /home/ec2-user/build/libs/gradle-22.06.14.jar >> $LOG_PATH 2>/home/ec2-user/deploy_err.log &
