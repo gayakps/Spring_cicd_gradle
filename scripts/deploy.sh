@@ -11,10 +11,10 @@ then
 else
   echo "> 현재 구동중인 어플이 존재하므로 종료합니다" >> $LOG_PATH
   echo "> kill -15 $CURRENT_PID" >> $LOG_PATH
-  sudo kill -15 $CURRENT_PID
+  kill -15 $CURRENT_PID
   sleep 10
 fi
 
-echo "자바 서비스를 실행합니다 !!" >> /home/ec2-user/deploy.log
-sudo cat $LOG_PATH;
-sudo java -jar /home/ec2-user/build/libs/gradle-22.06.14.jar &
+echo "자바 서비스를 실행합니다 !!" >> $LOG_PATH
+cat $LOG_PATH;
+java -jar /home/ec2-user/build/libs/gradle-22.06.14.jar &
