@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "시스템을 시작합니다"
-BUILD_JAR=$(ls /home/ec2-user/jenkins/build/libs/gradle-0.0.1-SNAPSHOT.jar)     # jar가 위치하는 곳
+BUILD_JAR=$(ls /home/ec2-user/build/libs/gradle-22.06.14.jar)     # jar가 위치하는 곳
 JAR_NAME=$(basename $BUILD_JAR)
 
 echo "> build 파일명: $JAR_NAME" >> /home/ec2-user/deploy.log

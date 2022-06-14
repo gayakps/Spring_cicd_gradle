@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'gaya.pe.kr'
-version = '0.0.1-SNAPSHOT'
+version = '22.06.14'
 sourceCompatibility = '11'
 
 repositories {
