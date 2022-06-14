@@ -9,7 +9,9 @@ import java.util.Date;
 public class GradleApplication {
 
     public static void main(String[] args) {
-        System.out.println("[[[ 오후 5시 10분 Start System " + new Date().toLocaleString() + "]]]]");
+        System.out.println("[---------------------------------------------]");
+        System.out.println("|              서버가 시작 됩니다                |");
+        System.out.println("[---------------------------------------------]");
         SpringApplication.run(GradleApplication.class, args);
     }
 
