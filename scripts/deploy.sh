@@ -16,4 +16,4 @@ else
 fi
 
 echo "서비스를 실행합니다" >> /home/ec2-user/deploy.log
-echo nohup sudo java -jar $BUILD_JAR \& >> /home/ec2-user/deploy.log 2>/home/ec2-user/deploy_err.log &
+sudo java -jar $BUILD_JAR &
