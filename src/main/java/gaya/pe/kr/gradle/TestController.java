@@ -15,7 +15,7 @@ public class TestController {
 
     @GetMapping("/")
     public static String test(Model model) {
-        String defaultTime = "Total Test Case 2022.06.15 13:57";
+        String defaultTime = "Total Test Case 2022.06.15 14:46";
         InetAddress ip;
         try {
             ip = InetAddress.getLocalHost();
